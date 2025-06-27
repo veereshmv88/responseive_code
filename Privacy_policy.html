@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBooster - Privacy Policy</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e1e1e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .privacy-policy {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        h2 {
+            margin: 1.8rem 0 1rem;
+            color: var(--text-color);
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+        
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #888;
+            margin-top: 2rem;
+            text-align: right;
+        }
+        
+        .toc {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            
+            .privacy-policy {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">BizBooster</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="privacy-policy">
+            <h1>Privacy Policy</h1>
+            
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul id="toc-list">
+                    <!-- JS will populate this -->
+                </ul>
+            </div>
+            
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Welcome to BizBooster ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our BizBooster platform (the "Service"). Please read this policy carefully. By accessing or using our Service, you agree to the collection and use of information in accordance with this policy.</p>
+            </section>
+            
+            <section id="information-we-collect">
+                <h2>Information We Collect</h2>
+                <h3>Personal Information</h3>
+                <p>We may collect personally identifiable information that you voluntarily provide to us, including:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Business information</li>
+                    <li>Payment details (processed securely through third-party providers)</li>
+                </ul>
+                
+                <h3>Non-Personal Information</h3>
+                <p>We automatically collect certain information when you visit our Service, including:</p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Pages visited</li>
+                    <li>Time and date of visits</li>
+                    <li>Time spent on pages</li>
+                </ul>
+            </section>
+            
+            <section id="how-we-use">
+                <h2>How We Use Your Information</h2>
+                <p>We use the collected information for various purposes:</p>
+                <ul>
+                    <li>To provide and maintain our Service</li>
+                    <li>To notify you about changes to our Service</li>
+                    <li>To allow you to participate in interactive features</li>
+                    <li>To provide customer support</li>
+                    <li>To gather analysis for service improvement</li>
+                    <li>To monitor service usage</li>
+                    <li>To detect and prevent technical issues</li>
+                </ul>
+            </section>
+            
+            <section id="data-sharing">
+                <h2>Data Sharing and Disclosure</h2>
+                <p>We may share your information in the following situations:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> With third parties who perform services for us (payment processing, data analysis, etc.)</li>
+                    <li><strong>Business Transfers:</strong> In connection with any merger or sale of company assets</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+                </ul>
+            </section>
+            
+            <section id="data-security">
+                <h2>Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your personal information. However, no internet transmission or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            </section>
+            
+            <section id="your-rights">
+                <h2>Your Data Protection Rights</h2>
+                <p>Depending on your location, you may have rights including:</p>
+                <ul>
+                    <li>Access to your personal data</li>
+                    <li>Correction of inaccurate data</li>
+                    <li>Deletion of your data</li>
+                    <li>Restriction of processing</li>
+                    <li>Data portability</li>
+                    <li>Objection to processing</li>
+                </ul>
+                <p>To exercise these rights, please contact us at <a href="mailto:privacy@bizbooster.example.com">privacy@bizbooster.example.com</a>.</p>
+            </section>
+            
+            <section id="cookies">
+                <h2>Cookies and Tracking Technologies</h2>
+                <p>We use cookies and similar tracking technologies to track activity on our Service. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+            </section>
+            
+            <section id="third-party">
+                <h2>Third-Party Links</h2>
+                <p>Our Service may contain links to third-party websites. We have no control over and assume no responsibility for their content or privacy practices.</p>
+            </section>
+            
+            <section id="children">
+                <h2>Children's Privacy</h2>
+                <p>Our Service does not address anyone under 13. We do not knowingly collect personal information from children under 13.</p>
+            </section>
+            
+            <section id="changes">
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+            </section>
+            
+            <section class="contact-info" id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <ul>
+                    <li>Email: vtdtechco.@gmail.com</li>
+                    <li>Address: Available Soon</li>
+                    <li>Website: https://vtdtechandco.netlify.app/</li>
+                </ul>
+            </section>
+            
+            <p class="last-updated">Last Updated: <span id="last-updated-date"></span></p>
+        </div>
+    </div>
+    
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> BizBooster. All rights reserved.Vtd Tech & co</p>
+            <div
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Set last updated date
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('last-updated-date').textContent = new Date().toLocaleDateString('en-US', options);
+        
+        // Generate table of contents dynamically
+        const tocList = document.getElementById('toc-list');
+        const sections = document.querySelectorAll('section[id]');
+        
+        sections.forEach(section => {
+            const heading = section.querySelector('h2');
+            if (heading) {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `#${section.id}`;
+                link.textContent = heading.textContent;
+                listItem.appendChild(link);
+                tocList.appendChild(listItem);
+            }
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
