@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBooster - Terms of Service</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .content {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+            font-size: 22px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .accept-section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .accept-checkbox {
+            margin-right: 10px;
+        }
+        
+        .accept-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .accept-button:hover {
+            background-color: #3a56d4;
+        }
+        
+        .accept-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">BizBooster</a>
+            <nav>
+                <!-- Navigation links would go here -->
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>Terms of Service</h3>
+                <ul class="sidebar-nav" id="toc-nav">
+                    <!-- JavaScript will populate this -->
+                </ul>
+            </aside>
+            
+            <main class="content">
+                <h1>BizBooster Terms of Service</h1>
+                <p class="last-updated">Last Updated: <span id="current-date"></span></p>
+                
+                <section id="introduction">
+                    <p>Welcome to BizBooster! These Terms of Service ("Terms") govern your access to and use of the BizBooster platform, services, and applications (collectively, the "Service"). Please read these Terms carefully before using the Service.</p>
+                    <p>By accessing or using the Service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use the Service.</p>
+                </section>
+                
+                <section id="definitions">
+                    <h2>1. Definitions</h2>
+                    <p>For the purposes of these Terms:</p>
+                    <ul>
+                        <li><strong>"BizBooster"</strong> refers to the platform, website, and services provided by BizBooster.</li>
+                        <li><strong>"User"</strong> or <strong>"You"</strong> means any individual or entity that accesses or uses the Service.</li>
+                        <li><strong>"Content"</strong> includes all text, images, data, information, and other materials uploaded, posted, or displayed on the Service.</li>
+                        <li><strong>"Account"</strong> means the user account created to access certain features of the Service.</li>
+                    </ul>
+                </section>
+                
+                <section id="eligibility">
+                    <h2>2. Eligibility</h2>
+                    <p>To use the Service, you must:</p>
+                    <ol>
+                        <li>Be at least 18 years of age or the age of majority in your jurisdiction;</li>
+                        <li>Have the legal capacity to enter into these Terms;</li>
+                        <li>Not be barred from receiving the Service under applicable law.</li>
+                    </ol>
+                </section>
+                
+                <section id="accounts">
+                    <h2>3. Accounts</h2>
+                    <p>To access certain features of the Service, you may be required to create an Account. You agree to:</p>
+                    <ul>
+                        <li>Provide accurate, current, and complete information during registration;</li>
+                        <li>Maintain and promptly update your Account information;</li>
+                        <li>Maintain the security of your password and accept all risks of unauthorized access;</li>
+                        <li>Notify us immediately if you discover or suspect any security breaches related to the Service.</li>
+                    </ul>
+                    <p>BizBooster reserves the right to suspend or terminate Accounts that violate these Terms.</p>
+                </section>
+                
+                <section id="user-responsibilities">
+                    <h2>4. User Responsibilities</h2>
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>Use the Service for any illegal purpose or in violation of any laws;</li>
+                        <li>Violate or encourage others to violate the rights of third parties;</li>
+                        <li>Post, upload, or distribute any Content that is unlawful, defamatory, or infringing;</li>
+                        <li>Attempt to interfere with the proper functioning of the Service;</li>
+                        <li>Use the Service to transmit viruses or other harmful computer code;</li>
+                        <li>Attempt to gain unauthorized access to other users' Accounts or to the Service's systems.</li>
+                    </ul>
+                </section>
+                
+                <section id="intellectual-property">
+                    <h2>5. Intellectual Property</h2>
+                    <p>The Service and its original content, features, and functionality are owned by BizBooster and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                    <p>You retain ownership of any Content you submit, post, or display on the Service. By submitting Content, you grant BizBooster a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, and display such Content for the purpose of providing the Service.</p>
+                </section>
+                
+                <section id="termination">
+                    <h2>6. Termination</h2>
+                    <p>BizBooster may terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason, including if you breach these Terms.</p>
+                    <p>Upon termination, your right to use the Service will cease immediately. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, and limitations of liability.</p>
+                </section>
+                
+                <section id="disclaimer">
+                    <h2>7. Disclaimer of Warranties</h2>
+                    <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. BIZBOOSTER DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                    <p>BIZBOOSTER DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, OR THAT DEFECTS WILL BE CORRECTED.</p>
+                </section>
+                
+                <section id="limitation-liability">
+                    <h2>8. Limitation of Liability</h2>
+                    <p>IN NO EVENT SHALL BIZBOOSTER, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.</p>
+                    <p>BIZBOOSTER'S TOTAL LIABILITY FOR ANY CLAIMS ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID TO BIZBOOSTER IN THE PAST SIX MONTHS.</p>
+                </section>
+                
+                <section id="governing-law">
+                    <h2>9. Governing Law</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
+                    <p>Any disputes arising under these Terms shall be resolved in the courts located in [Your Jurisdiction].</p>
+                </section>
+                
+                <section id="changes">
+                    <h2>10. Changes to Terms</h2>
+                    <p>BizBooster reserves the right to modify these Terms at any time. We will provide notice of material changes through the Service or by other means.</p>
+                    <p>Your continued use of the Service after such changes constitutes your acceptance of the new Terms.</p>
+                </section>
+                
+                <section id="contact">
+                    <h2>11. Contact Information</h2>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <p>Email: legal@bizbooster.example.com<br>
+                    Address: [Your College Address]<br>
+                    Phone: [Your Contact Number]</p>
+                </section>
+                
+                <div class="accept-section">
+                    <h3>Acceptance of Terms</h3>
+                    <p>By using the BizBooster Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                    <div>
+                        <input type="checkbox" id="accept-checkbox" class="accept-checkbox">
+                        <label for="accept-checkbox">I have read and agree to the Terms of Service</label>
+                    </div>
+                    <button id="accept-button" class="accept-button" disabled>Accept Terms</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> BizBooster. All rights reserved. This is a college project and not an actual service.</p>
+        </div>
+    </footer>
+    
+<script>
+    // Set current date and year
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Create table of contents navigation
+    const sections = document.querySelectorAll('section');
+    const tocNav = document.getElementById('toc-nav');
+    
+    sections.forEach(section => {
+        const heading = section.querySelector('h2');
+        if (heading) {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.textContent = heading.textContent;
+            link.href = `#${section.id}`;
+            
+            listItem.appendChild(link);
+            tocNav.appendChild(listItem);
+        }
+    });
+    
+    // Highlight active section in TOC
+    window.addEventListener('scroll', function() {
+        const fromTop = window.scrollY + 100;
+        
+        document.querySelectorAll('#toc-nav a').forEach(link => {
+            const section = document.querySelector(link.hash);
+            
+            if (
+                section.offsetTop <= fromTop &&
+                section.offsetTop + section.offsetHeight > fromTop
+            ) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+    
+    // Terms acceptance functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptCheckbox = document.getElementById('accept-checkbox');
+        const acceptButton = document.getElementById('accept-button');
+        const acceptSection = document.querySelector('.accept-section');
+        
+        acceptCheckbox.addEventListener('change', function() {
+            acceptButton.disabled = !this.checked;
+        });
+        
+        acceptButton.addEventListener('click', function() {
+            // Show checkmark
+            acceptCheckbox.checked = true;
+            
+            // Change button text
+            acceptButton.textContent = '✓ Accepted';
+            acceptButton.style.backgroundColor = '#4CAF50';
+            
+            // Create thank you message
+            const thankYouMsg = document.createElement('p');
+            thankYouMsg.textContent = 'Thank you for accepting our Terms of Service!';
+            thankYouMsg.style.color = '#4CAF50';
+            thankYouMsg.style.fontWeight = 'bold';
+            thankYouMsg.style.marginTop = '10px';
+            
+            acceptSection.appendChild(thankYouMsg);
+            
+            // Disable the button
+            acceptButton.disabled = true;
+            
+            // Redirect after 2 seconds
+            setTimeout(function() {
+                localStorage.setItem('termsAccepted', 'true');
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>
