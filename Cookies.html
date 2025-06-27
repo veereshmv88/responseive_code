@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizBooster - Cookies Policy</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #ddd;
+            --success-color: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .content {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+            font-size: 22px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .cookie-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .cookie-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cookie-purpose {
+            font-style: italic;
+            color: #666;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .accept-all {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        
+        .accept-necessary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        
+        .accept-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .accept-section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .accept-checkbox {
+            margin-right: 10px;
+        }
+        
+        .accept-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .accept-button:hover {
+            background-color: #3a56d4;
+        }
+        
+        .accept-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .success-message {
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 20px;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">BizBooster</a>
+            <nav>
+                <!-- Navigation links would go here -->
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>Cookies Policy</h3>
+                <ul class="sidebar-nav" id="toc-nav">
+                    <!-- JavaScript will populate this -->
+                </ul>
+            </aside>
+            
+            <main class="content">
+                <h1>BizBooster Cookies Policy</h1>
+                <p class="last-updated">Last Updated: <span id="current-date"></span></p>
+                
+                <section id="introduction">
+                    <p>This Cookies Policy explains what cookies are and how we use them on the BizBooster platform. You should read this policy to understand what cookies are, how we use them, and how to manage them.</p>
+                    <p>By using our website, you consent to the use of cookies in accordance with this policy.</p>
+                </section>
+                
+                <section id="what-are-cookies">
+                    <h2>1. What Are Cookies?</h2>
+                    <p>Cookies are small text files that are stored on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and to provide information to the website owners.</p>
+                </section>
+                
+                <section id="how-we-use-cookies">
+                    <h2>2. How We Use Cookies</h2>
+                    <p>We use cookies for the following purposes:</p>
+                    <div class="cookie-item">
+                        <div class="cookie-name">Essential Cookies</div>
+                        <div class="cookie-purpose">Purpose: Necessary for the website to function</div>
+                        <p>These cookies are essential to provide you with services available through our website and to enable you to use some of its features.</p>
+                    </div>
+                    
+                    <div class="cookie-item">
+                        <div class="cookie-name">Performance Cookies</div>
+                        <div class="cookie-purpose">Purpose: Help us understand how visitors interact with our website</div>
+                        <p>These cookies are used to collect information about how visitors use our website. All information is aggregated and anonymous.</p>
+                    </div>
+                    
+                    <div class="cookie-item">
+                        <div class="cookie-name">Functionality Cookies</div>
+                        <div class="cookie-purpose">Purpose: Remember your preferences</div>
+                        <p>These cookies allow our website to remember choices you make and provide enhanced, more personal features.</p>
+                    </div>
+                </section>
+                
+                <section id="managing-cookies">
+                    <h2>3. Managing Cookies</h2>
+                    <p>You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed.</p>
+                    <p>If you do this, however, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.</p>
+                </section>
+                
+                <section id="changes">
+                    <h2>4. Changes to This Policy</h2>
+                    <p>We may update our Cookies Policy from time to time. We will notify you of any changes by posting the new Cookies Policy on this page.</p>
+                </section>
+                
+                <div class="accept-section">
+                    <h3>Cookie Preferences</h3>
+                    <p>Please select your cookie preferences:</p>
+                    <div>
+                        <input type="checkbox" id="essential-cookies" class="accept-checkbox" checked disabled>
+                        <label for="essential-cookies">Essential Cookies (Required)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="performance-cookies" class="accept-checkbox">
+                        <label for="performance-cookies">Performance Cookies</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="functionality-cookies" class="accept-checkbox">
+                        <label for="functionality-cookies">Functionality Cookies</label>
+                    </div>
+                    <button id="save-preferences" class="accept-button">Save Preferences</button>
+                    <div id="cookie-success" class="success-message"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <div class="cookie-banner" id="cookie-banner">
+        <p>We use cookies to enhance your experience on our website. By clicking "Accept All", you consent to our use of all cookies. You can manage your preferences at any time.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn accept-all">Accept All</button>
+            <button class="cookie-btn accept-necessary">Necessary Only</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> BizBooster. All rights reserved. This is a college project and not an actual service.</p>
+        </div>
+    </footer>
+    
+<script>
+    // Set current date and year
+    document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Create table of contents navigation
+    const sections = document.querySelectorAll('section');
+    const tocNav = document.getElementById('toc-nav');
+    
+    sections.forEach(section => {
+        const heading = section.querySelector('h2');
+        if (heading) {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.textContent = heading.textContent;
+            link.href = `#${section.id}`;
+            
+            listItem.appendChild(link);
+            tocNav.appendChild(listItem);
+        }
+    });
+    
+    // Highlight active section in TOC
+    window.addEventListener('scroll', function() {
+        const fromTop = window.scrollY + 100;
+        
+        document.querySelectorAll('#toc-nav a').forEach(link => {
+            const section = document.querySelector(link.hash);
+            
+            if (
+                section.offsetTop <= fromTop &&
+                section.offsetTop + section.offsetHeight > fromTop
+            ) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+    
+    // Cookie preferences functionality with thank you message
+    document.addEventListener('DOMContentLoaded', function() {
+        const saveBtn = document.getElementById('save-preferences');
+        const successMsg = document.getElementById('cookie-success');
+        const cookieBanner = document.getElementById('cookie-banner');
+        
+        // Show cookie banner if preferences not set
+        if (!localStorage.getItem('cookiePrefs')) {
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 1000);
+        }
+        
+        // Save preferences with visual feedback
+        saveBtn.addEventListener('click', function() {
+            // Get current preferences
+            const prefs = {
+                essential: true, // Always true
+                performance: document.getElementById('performance-cookies').checked,
+                functionality: document.getElementById('functionality-cookies').checked
+            };
+            
+            // Save to storage
+            localStorage.setItem('cookiePrefs', JSON.stringify(prefs));
+            
+            // Visual feedback - change button to show acceptance
+            saveBtn.innerHTML = '✓ Preferences Saved';
+            saveBtn.style.backgroundColor = '#4CAF50';
+            saveBtn.disabled = true;
+            
+            // Show thank you message
+            successMsg.textContent = 'Thank you for accepting our Cookies Policy!';
+            successMsg.style.opacity = '1';
+            successMsg.style.color = '#4CAF50';
+            
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+        
+        // Cookie banner buttons with similar flow
+        document.querySelector('.accept-all').addEventListener('click', function() {
+            const prefs = {
+                essential: true,
+                performance: true,
+                functionality: true
+            };
+            localStorage.setItem('cookiePrefs', JSON.stringify(prefs));
+            
+            // Visual feedback
+            this.innerHTML = '✓ Accepted All';
+            this.style.backgroundColor = '#4CAF50';
+            document.querySelector('.accept-necessary').style.display = 'none';
+            
+            // Show thank you message
+            const bannerMsg = document.createElement('div');
+            bannerMsg.textContent = 'Thank you! Redirecting...';
+            bannerMsg.style.color = '#4CAF50';
+            bannerMsg.style.fontWeight = 'bold';
+            bannerMsg.style.marginTop = '10px';
+            cookieBanner.appendChild(bannerMsg);
+            
+            // Hide banner and redirect after 2 seconds
+            setTimeout(() => {
+                cookieBanner.classList.remove('show');
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+        
+        document.querySelector('.accept-necessary').addEventListener('click', function() {
+            const prefs = {
+                essential: true,
+                performance: false,
+                functionality: false
+            };
+            localStorage.setItem('cookiePrefs', JSON.stringify(prefs));
+            
+            // Visual feedback
+            this.innerHTML = '✓ Necessary Only Accepted';
+            this.style.backgroundColor = '#4CAF50';
+            document.querySelector('.accept-all').style.display = 'none';
+            
+            // Show thank you message
+            const bannerMsg = document.createElement('div');
+            bannerMsg.textContent = 'Thank you! Redirecting...';
+            bannerMsg.style.color = '#4CAF50';
+            bannerMsg.style.fontWeight = 'bold';
+            bannerMsg.style.marginTop = '10px';
+            cookieBanner.appendChild(bannerMsg);
+            
+            // Hide banner and redirect after 2 seconds
+            setTimeout(() => {
+                cookieBanner.classList.remove('show');
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+        
+        // Load saved preferences
+        if (localStorage.getItem('cookiePrefs')) {
+            const prefs = JSON.parse(localStorage.getItem('cookiePrefs'));
+            document.getElementById('performance-cookies').checked = prefs.performance;
+            document.getElementById('functionality-cookies').checked = prefs.functionality;
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>
