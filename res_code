@@ -1,0 +1,170 @@
+<style>
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+const menuLines = document.querySelectorAll('.menu-line');
+
+mobileMenuBtn.addEventListener('click', () => {
+    // Toggle mobile menu visibility
+    nav.classList.toggle('active');
+    
+    // Toggle menu button animation
+    mobileMenuBtn.classList.toggle('open');
+    
+    // Animate menu lines (hamburger to X)
+    menuLines[0].classList.toggle('rotate-down');
+    menuLines[1].classList.toggle('hide');
+    menuLines[2].classList.toggle('rotate-up');
+});
+
+function isMobileView() {
+    return window.innerWidth <= 992; // Match your mobile breakpoint
+}
+
+function setupMobileNavbar() {
+    const navList = document.querySelector('.nav ul');
+    
+    if (isMobileView()) {
+      
+        const linksToRemove = ['#contact', '#testimonials'];
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (linksToRemove.includes(link.getAttribute('href'))) {
+                link.parentElement.remove();
+            }
+        });
+        
+        
+        const loginItem = document.createElement('li');
+        loginItem.innerHTML = `
+            <a href="login_.html" class="nav-link mobile-auth-btn mobile-login">
+                <span>Log In</span>
+            </a>
+        `;
+        
+        const signupItem = document.createElement('li');
+        signupItem.innerHTML = `
+            <a href="signup.html" class="nav-link mobile-auth-btn mobile-signup">
+                <span>Get Started</span>
+            </a>
+        `;
+        
+        navList.appendChild(loginItem);
+        navList.appendChild(signupItem);
+    }
+}
+
+
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.nav-link')) {
+        nav.classList.remove('active');
+        mobileMenuBtn.classList.remove('open');
+        menuLines[0].classList.remove('rotate-down');
+        menuLines[1].classList.remove('hide');
+        menuLines[2].classList.remove('rotate-up');
+    }
+});
+
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+setupMobileNavbar();
+window.addEventListener('resize', setupMobileNavbar);
+
+
+
+
+
+CSS
+
+
+
+
+
+@media (max-width: 992px) {
+    /* Hide desktop auth buttons */
+    .auth-buttons {
+        display: none;
+    }
+    
+    .mobile-auth-btn {
+        display: block;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .mobile-login {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--dark);
+    }
+    
+    .mobile-signup {
+        background-color: var(--primary);
+        color: white;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        gap: 5px;
+        padding: 0 20px;
+    }
+    
+    .menu-line {
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn.open .menu-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .mobile-menu-btn.open .menu-line:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.open .menu-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
